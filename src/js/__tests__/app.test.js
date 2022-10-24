@@ -1,5 +1,4 @@
-import result from '../app';
-
+import orderByProps from '../app';
 
 test('testing list order', () => {
   const rightOrder = [
@@ -9,6 +8,10 @@ test('testing list order', () => {
     { key: 'defence', value: 40 }, // порядок по алфавиту (т.к. в массиве с ключами нет значения "defence")
     { key: 'health', value: 10 }, // порядок по алфавиту (т.к. в массиве с ключами нет значения "health")
   ];
-
+  const sorting = ['name', 'level'];
+  const obj = {
+    name: 'мечник', health: 10, level: 2, attack: 80, defence: 40,
+  };
+  const result = orderByProps(obj, sorting);
   expect(rightOrder).toEqual(result);
 });
